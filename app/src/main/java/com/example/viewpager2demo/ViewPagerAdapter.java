@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
     private List<Integer> colors = new ArrayList<>();
     {
-        colors.add(android.R.color.black);
+        colors.add(android.R.color.holo_red_dark);
         colors.add(android.R.color.holo_purple);
         colors.add(android.R.color.holo_blue_dark);
         colors.add(android.R.color.holo_green_light);
@@ -32,7 +32,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewPagerViewHolder holder, int position) {
-        holder.mTvTitle.setText("item " + position);
+        holder.mTvTitle.setText("item--- " + position);
         holder.mContainer.setBackgroundResource(colors.get(position));
     }
 

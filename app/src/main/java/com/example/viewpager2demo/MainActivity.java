@@ -33,5 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 FragmentStateAdapterActivity.start(MainActivity.this);
             }
         });
+        Button btnActivityFragmentStateAdapter = findViewById(R.id.button_activity_fragment_state_adpater);
+        btnActivityFragmentStateAdapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTabStateActivity.start(MainActivity.this);
+            }
+        });
     }
 }

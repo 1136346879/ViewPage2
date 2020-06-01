@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -30,7 +29,6 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private List<Integer> colors = new ArrayList<>();
     private ViewPagerFragmentStateAdapter mAdapter;
-
     {
         colors.add(android.R.color.black);
         colors.add(android.R.color.holo_purple);
@@ -66,7 +64,6 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
                     mAdapter.notifyItemRemoved(last);
                 }
                 return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -77,12 +74,14 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fragment_state_adapter);
         mTabLayout = findViewById(R.id.tablayout);
         mViewPager2 = findViewById(R.id.viewpager2);
-        mAdapter = new ViewPagerFragmentStateAdapter(getSupportFragmentManager());
+        mAdapter = new ViewPagerFragmentStateAdapter(this);
         mViewPager2.setAdapter(mAdapter);
+        mViewPager2.setUserInputEnabled(true);//true:滑动，false：禁止滑动
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab0"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab1"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab2"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Tab3"));
+        //tab点击选中
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -91,12 +90,10 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
         mViewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -110,15 +107,8 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
 
     class ViewPagerFragmentStateAdapter extends FragmentStateAdapter {
 
-
-        public ViewPagerFragmentStateAdapter(@NonNull FragmentManager fragmentManager) {
+        public ViewPagerFragmentStateAdapter(@NonNull AppCompatActivity fragmentManager) {
             super(fragmentManager);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return PageFragment.newInstance(colors, position);
         }
 
         @Override
@@ -126,7 +116,10 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
             return colors.size();
         }
 
+        @NonNull
+        @Override
+        public Fragment createFragment(int position) {
+            return PageFragment.newInstance(colors, position);
+        }
     }
-
-
 }

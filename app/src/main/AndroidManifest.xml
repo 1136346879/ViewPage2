@@ -19,6 +19,7 @@
         <activity android:name=".HorizontalScrollingActivity"/>
         <activity android:name=".VerticalScrollingActivity"/>
         <activity android:name=".FragmentStateAdapterActivity"/>
+        <activity android:name=".FragmentTabStateActivity"/>
     </application>
 
 </manifest>

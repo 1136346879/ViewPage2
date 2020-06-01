@@ -1,5 +1,5 @@
 <resources>
-
+    <style name="HomeTab" />
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -7,5 +7,25 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="HomeTab.Icon" parent="@style/HomeTab">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+    <style name="HomeTab.Layout" parent="@style/HomeTab">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
 
+    <style name="HomeTab.Text" parent="@style/HomeTab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_color_maintab</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
 </resources>
