@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 /**
- * @author wzc
- * @date 2019/3/30
+ * @author wdx
+ * @date 2019/6/01
  */
 public class VerticalScrollingActivity extends AppCompatActivity {
 

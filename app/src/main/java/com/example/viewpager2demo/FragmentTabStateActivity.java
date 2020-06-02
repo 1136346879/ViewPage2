@@ -48,8 +48,8 @@ public class FragmentTabStateActivity extends AppCompatActivity {
 
         mAdapter = new ViewPagerFragmentStateAdapter(this, fragmentList, fragmentIdList);
         mViewPager2.setAdapter(mAdapter);
-        mViewPager2.setUserInputEnabled(false);
-        mViewPager2.setOffscreenPageLimit(2);
+//        mViewPager2.setUserInputEnabled(false);
+        mViewPager2.setOffscreenPageLimit(3);
         mTabLayout.getTabAt(mSelectedTab).select();
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -61,6 +61,9 @@ public class FragmentTabStateActivity extends AppCompatActivity {
                 } else if (tab.equals(mTabLayout.getTabAt(1))) {
                     mSelectedTab = 1;
                     mViewPager2.setCurrentItem(1, false);
+                }else if (tab.equals(mTabLayout.getTabAt(2))) {
+                    mSelectedTab = 2;
+                    mViewPager2.setCurrentItem(2, false);
                 }
             }
 
@@ -115,8 +118,6 @@ public class FragmentTabStateActivity extends AppCompatActivity {
         tab3 = mTabLayout.newTab();
         tab3.setCustomView(view3);
         mTabLayout.addTab(tab3);
-
-
     }
 
     private void fragmentInit() {

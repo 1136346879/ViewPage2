@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * @author wzc
- * @date 2019/3/30
+ * @author wdx
+ * @date 2012/6/01
  */
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
     private List<Integer> colors = new ArrayList<>();

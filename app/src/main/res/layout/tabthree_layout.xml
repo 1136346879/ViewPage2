@@ -6,7 +6,7 @@
 
         <ImageView
             style="@style/HomeTab.Icon"
-            android:src="@drawable/tab_main_home" />
+            android:src="@drawable/tab_ta_home" />
 
         <TextView
             style="@style/HomeTab.Text"
