@@ -15,8 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 /**
- * @author wzc
- * @date 2019/3/30
+ * @author wdx
+ * @date 2020/06/02
  */
 public class PageFragment extends Fragment {
     private static final String COLORS = "colors";

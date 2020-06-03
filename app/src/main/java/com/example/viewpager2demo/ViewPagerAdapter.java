@@ -21,7 +21,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     {
         colors.add(android.R.color.holo_red_dark);
         colors.add(android.R.color.holo_purple);
-        colors.add(android.R.color.holo_blue_dark);
+        colors.add(android.R.color.holo_orange_light);
         colors.add(android.R.color.holo_green_light);
     }
     @NonNull

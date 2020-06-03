@@ -20,8 +20,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 /**
- * @author wzc
- * @date 2019/3/30
+ * @author wdx
+ * @date 2020/6/3
  */
 public class FragmentStateAdapterActivity extends AppCompatActivity {
 
@@ -30,10 +30,10 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
     private List<Integer> colors = new ArrayList<>();
     private ViewPagerFragmentStateAdapter mAdapter;
     {
-        colors.add(android.R.color.black);
-        colors.add(android.R.color.holo_purple);
-        colors.add(android.R.color.holo_blue_dark);
         colors.add(android.R.color.holo_green_light);
+        colors.add(android.R.color.holo_orange_dark);
+        colors.add(android.R.color.holo_blue_dark);
+        colors.add(android.R.color.holo_red_dark);
     }
     public static void start(Context context) {
         Intent starter = new Intent(context, FragmentStateAdapterActivity.class);
