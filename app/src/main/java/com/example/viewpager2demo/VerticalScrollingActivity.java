@@ -9,7 +9,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 /**
  * @author wdx
- * @date 2019/6/01
+ * @date 2020/6/01
  */
 public class VerticalScrollingActivity extends AppCompatActivity {
 

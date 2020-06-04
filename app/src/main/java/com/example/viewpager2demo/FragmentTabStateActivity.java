@@ -127,11 +127,11 @@ public class FragmentTabStateActivity extends AppCompatActivity {
         fragmentList.clear();
         fragmentIdList.clear();
         fragmentList.add(fragemnt1);
-        fragmentIdList.add(Long.valueOf(PAGE_HOME));
+        fragmentIdList.add((long) PAGE_HOME);
         fragmentList.add(fragemnt2);
-        fragmentIdList.add(Long.valueOf(PAGE_CATE));
+        fragmentIdList.add((long) PAGE_CATE);
         fragmentList.add(fragemnt3);
-        fragmentIdList.add(Long.valueOf(PAGE_ONLINE));
+        fragmentIdList.add((long) PAGE_ONLINE);
     }
 
 
@@ -139,7 +139,7 @@ public class FragmentTabStateActivity extends AppCompatActivity {
         private List<Fragment> list;
         private List<Long> fragmentIds;
 
-        public ViewPagerFragmentStateAdapter(@NonNull AppCompatActivity fragmentManager, List fragmentList, List fragmentIdList) {
+        ViewPagerFragmentStateAdapter(@NonNull AppCompatActivity fragmentManager, List fragmentList, List fragmentIdList) {
             super(fragmentManager);
             this.list = fragmentList;
             this.fragmentIds = fragmentIdList;

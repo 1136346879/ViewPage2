@@ -22,18 +22,19 @@ import androidx.viewpager2.widget.ViewPager2;
 /**
  * @author wdx
  * @date 2020/6/3
+ * 新闻栏目样式（热点，新闻，体育，生活等等）
  */
 public class FragmentStateAdapterActivity extends AppCompatActivity {
 
     private ViewPager2 mViewPager2;
     private TabLayout mTabLayout;
-    private List<Integer> colors = new ArrayList<>();
+    private List<Integer> images = new ArrayList<>();
     private ViewPagerFragmentStateAdapter mAdapter;
     {
-        colors.add(android.R.color.holo_green_light);
-        colors.add(android.R.color.holo_orange_dark);
-        colors.add(android.R.color.holo_blue_dark);
-        colors.add(android.R.color.holo_red_dark);
+        images.add(R.drawable.bg1);
+        images.add(R.drawable.bg2);
+        images.add(R.drawable.bg3);
+        images.add(R.drawable.bg4);
     }
     public static void start(Context context) {
         Intent starter = new Intent(context, FragmentStateAdapterActivity.class);
@@ -47,23 +48,22 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_add:
-                if (TextUtils.equals(item.getTitle(), getString(R.string.action_add))) {
-                    colors.add(android.R.color.holo_red_light);
-                    mTabLayout.addTab(mTabLayout.newTab().setText("Tab4"));
-                    mAdapter.notifyItemInserted(colors.size()-1);
-                    item.setIcon(R.drawable.ic_action_remove);
-                    item.setTitle(R.string.action_remove);
-                } else {
-                    item.setIcon(R.drawable.ic_action_add);
-                    item.setTitle(R.string.action_add);
-                    int last = colors.size() - 1;
-                    colors.remove(last);
-                    mTabLayout.removeTabAt(last);
-                    mAdapter.notifyItemRemoved(last);
-                }
-                return true;
+        if (item.getItemId() == R.id.action_add) {
+            if (TextUtils.equals(item.getTitle(), getString(R.string.action_add))) {
+                images.add(R.drawable.bg5);
+                mTabLayout.addTab(mTabLayout.newTab().setText("汽车"));
+                mAdapter.notifyItemInserted(images.size() - 1);
+                item.setIcon(R.drawable.ic_action_remove);
+                item.setTitle(R.string.action_remove);
+            } else {
+                item.setIcon(R.drawable.ic_action_add);
+                item.setTitle(R.string.action_add);
+                int last = images.size() - 1;
+                images.remove(last);
+                mTabLayout.removeTabAt(last);
+                mAdapter.notifyItemRemoved(last);
+            }
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -77,10 +77,10 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
         mAdapter = new ViewPagerFragmentStateAdapter(this);
         mViewPager2.setAdapter(mAdapter);
         mViewPager2.setUserInputEnabled(true);//true:滑动，false：禁止滑动
-        mTabLayout.addTab(mTabLayout.newTab().setText("Tab0"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Tab1"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Tab2"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("Tab3"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("生活"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("体育"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("美食"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("头条"));
         //tab点击选中
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -107,19 +107,19 @@ public class FragmentStateAdapterActivity extends AppCompatActivity {
 
     class ViewPagerFragmentStateAdapter extends FragmentStateAdapter {
 
-        public ViewPagerFragmentStateAdapter(@NonNull AppCompatActivity fragmentManager) {
+        ViewPagerFragmentStateAdapter(@NonNull AppCompatActivity fragmentManager) {
             super(fragmentManager);
         }
 
         @Override
         public int getItemCount() {
-            return colors.size();
+            return images.size();
         }
 
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            return PageFragment.newInstance(colors, position);
+            return CommontPageFragment.newInstance(images, position);
         }
     }
 }

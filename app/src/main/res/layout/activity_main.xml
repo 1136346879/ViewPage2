@@ -10,7 +10,7 @@
 
     <Button
         android:id="@+id/btn_horizontal_scrolling"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -25,7 +25,7 @@
 
     <Button
         android:id="@+id/button_vertical_scrolling"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/button_fragment_state_adpater"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -55,7 +55,7 @@
 
     <Button
         android:id="@+id/button_activity_fragment_state_adpater"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"

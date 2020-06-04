@@ -18,15 +18,15 @@ import androidx.fragment.app.Fragment;
  * @author wdx
  * @date 2020/06/02
  */
-public class PageFragment extends Fragment {
+public class CommontPageFragment extends Fragment {
     private static final String COLORS = "colors";
     private static final String POSITION = "position";
-    public static PageFragment newInstance(List<Integer> colors, int position) {
+    static CommontPageFragment newInstance(List<Integer> colors, int position) {
 
         Bundle args = new Bundle();
         args.putSerializable(COLORS, ((ArrayList<Integer>) colors));
         args.putInt(POSITION, position);
-        PageFragment fragment = new PageFragment();
+        CommontPageFragment fragment = new CommontPageFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -53,6 +53,6 @@ public class PageFragment extends Fragment {
         RelativeLayout container = view.findViewById(R.id.container);
         TextView tvTitle = view.findViewById(R.id.tvTitle);
         container.setBackgroundResource(mColors.get(mPosition));
-        tvTitle.setText("Item " + mPosition);
+        tvTitle.setText("Item-条目-页面 " + mPosition);
     }
 }

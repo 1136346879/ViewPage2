@@ -6,6 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * 首页
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

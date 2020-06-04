@@ -14,15 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @author wdx
- * @date 2012/6/01
+ * @date 2020/6/01
  */
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
-    private List<Integer> colors = new ArrayList<>();
+    private List<Integer> images = new ArrayList<>();
+
     {
-        colors.add(android.R.color.holo_red_dark);
-        colors.add(android.R.color.holo_purple);
-        colors.add(android.R.color.holo_orange_light);
-        colors.add(android.R.color.holo_green_light);
+        images.add(R.drawable.bg1);
+        images.add(R.drawable.bg2);
+        images.add(R.drawable.bg3);
+        images.add(R.drawable.bg4);
     }
     @NonNull
     @Override
@@ -32,19 +33,19 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewPagerViewHolder holder, int position) {
-        holder.mTvTitle.setText("item--- " + position);
-        holder.mContainer.setBackgroundResource(colors.get(position));
+        holder.mTvTitle.setText("item--页面--position--" + position);
+        holder.mContainer.setBackgroundResource(images.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return colors.size();
+        return images.size();
     }
 
     class ViewPagerViewHolder extends RecyclerView.ViewHolder {
         TextView mTvTitle;
         RelativeLayout mContainer;
-        public ViewPagerViewHolder(@NonNull View itemView) {
+        ViewPagerViewHolder(@NonNull View itemView) {
             super(itemView);
             mContainer = itemView.findViewById(R.id.container);
             mTvTitle = itemView.findViewById(R.id.tvTitle);
