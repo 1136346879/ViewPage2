@@ -18,7 +18,7 @@ import androidx.core.app.ActivityCompat
 /**
  * Created by Splash on 2020/6/19.
  * Author：wdx
- * Description： This is 。。。
+ * Description： This is 。。。splash
  **/
 class Splash : AppCompatActivity() {
     var videoView: VideoView? = null
@@ -47,14 +47,17 @@ class Splash : AppCompatActivity() {
     open fun playVideo() {
         videoPath = Environment.getExternalStorageDirectory().absolutePath + "/" + "intro.mp4"
         val media = MediaMetadataRetriever()
-        val url = "https://fsyuncai-file.oss-cn-beijing.aliyuncs.com/common/20200627095227017284.mp4"
+//        val url = "https://fsyuncai-file.oss-cn-beijing.aliyuncs.com/common/20200627095227017284.mp4"
+//        val url = "https://fsyuncai-file.oss-cn-beijing.aliyuncs.com/common/20200628115933517299.mp4"
+        val url = "https://fsyuncai-file.oss-cn-beijing.aliyuncs.com/common/20200628120332180504.mp4"
 //        val url = "http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8"
         val uri: Uri = Uri.parse(videoPath)
         media.setDataSource(videoPath)
 //        media.setDataSource(url)
         //获取第一帧
         val bitmap = media.getFrameAtTime(1, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
-        imageView!!.setImageBitmap(bitmap)
+//        imageView!!.setImageBitmap(bitmap)
+        imageView!!.setBackgroundResource(R.drawable.bg1)
         media.release()
         videoView!!.setVideoPath(url)
 //        videoView!!.setVideoURI(uri)
